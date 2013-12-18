@@ -2,7 +2,7 @@
 
 {% block code_mirror_widget %}
     {% spaceless %}
-        {{ block('form_widget') }}
+        <textarea id="{{ id }}" name="{{ name }}">{{ data }}</textarea>
         {% if code_mirror_is_first_call() %}
             {% javascripts '@SolutionCodeMirrorBundle/Resources/public/js/codemirror.js'  %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
@@ -15,6 +15,10 @@
         {% if code_mirror_get_css_theme(parameters) %}
             {% set theme = code_mirror_get_css_theme(parameters) %}
 
+            {% stylesheets "@SolutionCodeMirrorBundle/Resources/public/css/theme/base16-dark.css"
+                           '@SolutionCodeMirrorBundle/Resources/public/css/codemirror.css' %}
+            <link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}" />
+            {% endstylesheets %}
         {% endif %}
 
         <script>
