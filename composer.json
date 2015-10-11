@@ -1,5 +1,5 @@
 {
-    "name": "nitrado/code-mirror-bundle",
+    "name": "paulferrett/code-mirror-bundle",
     "description": "This Bundle integrates CodeMirror editor into a Symfony2 project.",
     "keywords": ["codemirror", "php editor", "html editor", "editor"],
     "type": "symfony-bundle",
@@ -14,6 +14,11 @@
             "name": "Aaron Mueller",
             "homepage": "http://marbis.net/",
             "email": "aaron.mueller@marbis.net"
+        },
+        {
+            "name": "Paul Ferrett",
+            "homepage": "http://paulferrett.com/",
+            "email": "paul@paulferrett.com"
         }
     ],
     "require": {

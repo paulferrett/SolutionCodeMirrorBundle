@@ -1,20 +1,20 @@
-SolutionCodeMirrorBundle [![Build Status](https://api.travis-ci.org/f1nder/SolutionCodeMirrorBundle.png?branch=master)](https://travis-ci.org/f1nder/SolutionCodeMirrorBundle)
+SolutionCodeMirrorBundle
 ========================
 
-Integration  [CodeMirror](http://codemirror.net/) editor in you symfony2 project.
+Integrate the [CodeMirror](http://codemirror.net/) editor in you symfony2 project.
 
-###Install
+### Install
 
 Just add the following line to your projects composer.json require section, and update vendors:
 ``` js
-"nitrado/code-mirror-bundle": "dev-master"
+"paulferrett/code-mirror-bundle": "dev-master"
 ```
 
 Enable bundle , add to `AppKernel.php`:
 ``` php
  new Solution\CodeMirrorBundle\SolutionCodeMirrorBundle()
 ```
-###Configuration
+### Configuration
 Add default parameters to `config.yml`:
 ``` yaml
 twig:
@@ -24,7 +24,6 @@ twig:
 
 assetic:
     bundles:
-        - # ... other bundles
         - SolutionCodeMirrorBundle
 
 solution_code_mirror:
@@ -45,13 +44,16 @@ Install assets:
 $ ./app/console assets:install web --symlink
 ```
 
-###Usage
+### Usage
 ``` php
- $builder->add('content', 'code_mirror', array(
+$builder->add('content', 'code_mirror', array(
     'required' => true,
     'parameters' => array(
-         'lineNumbers' => 'true'
-     )
- ));
+        'lineNumbers' => true,
+        'mode': 'text/html',
+        'lineWrapping': true,
+        'theme': 'twilight',
+    ),
+));
 ```
 
