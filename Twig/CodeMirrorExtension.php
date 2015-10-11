@@ -44,12 +44,12 @@ class CodeMirrorExtension extends \Twig_Extension
         );
     }
 
-    public function parametersRender($paramters)
+    public function parametersRender($parameters)
     {
-        if (isset($paramters['mode'])) {
-            $paramters['mode'] = new Expr('"' . $paramters['mode'] . '"');
+        if (isset($parameters['mode'])) {
+            $parameters['mode'] = new Expr('"' . $parameters['mode'] . '"');
         }
-        $params = Json::encode($paramters, false, array('enableJsonExprFinder' => true));
+        $params = Json::encode($parameters, false, array('enableJsonExprFinder' => true));
 
         $this->isFirstCall = false;
 
@@ -69,7 +69,7 @@ class CodeMirrorExtension extends \Twig_Extension
 
         #var_dump($am, $am->get('theme'), $am->getNames()); die;
 
-        if(isset($parameters['theme']) AND $theme = $this->assetManager->getTheme($parameters['theme'])) {
+        if (isset($parameters['theme']) AND $theme = $this->assetManager->getTheme($parameters['theme'])) {
             return $theme;
         }
         return false;
